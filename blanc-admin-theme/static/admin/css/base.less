@@ -1,0 +1,397 @@
+@import (inline) '../../../../flat/static/admin/css/base.css';
+@import (less) 'global';
+
+////////////////////////////////////////////////////////////////////////////////
+// updated styles
+
+body {
+    -webkit-font-smoothing: antialiased;
+    font: 14px/21px @font;
+}
+
+a:link, a:visited {
+    color: @brand;
+}
+a:hover {
+    color: @hover;
+}
+
+h1 {
+    font-size: 1.875em;
+    line-height: 1.16666667;
+    line-height: 1;
+    margin: 0 0 .65em 0;
+    padding: 0 0 .65em 8px;
+}
+
+h5 {
+    text-transform: none;
+}
+
+li, dt, dd {
+    font-size: 1.125em;
+}
+
+.tiny, .mini {
+    font-size: 11px;
+}
+
+.help, p.help {
+    font-size: 11px !important;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// tables
+
+table {
+    border-color: @brand;
+}
+
+td, th {
+    font-size: 1.125em;
+    font: @font;
+}
+
+th { font-weight: normal; }
+
+/* sortable tables */
+
+thead th {
+    line-height: 19px;
+    font-size: 13px;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// forms
+
+input, textarea, select, .form-row p, form .button {
+    font-family: @font;
+    font-size: 1.125em;
+}
+
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background: black;
+}
+
+.button:active, input[type=submit]:active, input[type=button]:active,
+.button:hover, input[type=submit]:hover, input[type=button]:hover {
+    background: @dark;
+}
+
+.button.default, input[type=submit].default, .submit-row input.default {
+    background: black;
+}
+
+.button.default:active, input[type=submit].default:active,
+.button.default:hover, input[type=submit].default:hover {
+    background: @brand;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// modules
+
+.module h2, .module caption, .inline-group h2 {
+    font-size: 1.125em;
+    background: black;
+}
+
+.module caption,
+.inline-group h2 {
+    font-size: 1.125em;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+.module table {
+    width: 100%;  // might remove this later
+}
+
+/* messages and errors */
+
+ul.messagelist li {
+    font-size: 1.125em;
+}
+
+ul.messagelist li.warning {
+    background: @brand url(../img/icon_alert.gif) 40px 10px no-repeat;
+}
+
+div.system-message {
+    background: @brand;
+}
+
+/* BREADCRUMBS */
+
+div.breadcrumbs {
+    background: #000000;
+    padding: 0 18px;
+    border-top: 1px solid #373737;
+    font-size: 1.125em;
+    line-height: 53px;
+    color: #999;
+}
+
+div.breadcrumbs a:hover {
+    color: #fb2668;
+}
+
+/* OBJECT TOOLS */
+
+.object-tools {
+    font-size: 14px;
+    margin-top: -58px;
+
+    li {
+        font-size: 14px !important;
+    }
+    a {
+        border-radius: 4px;
+        &:link, &:visited {
+            background: @brand;
+            font-size: 1.125em;
+            text-transform: normal;
+            text-transform: none;
+        }
+    }
+}
+
+.object-tools a:hover, .object-tools li:hover a {
+    background-color: black;
+}
+
+.object-tools a.viewsitelink, .object-tools a.golink {
+    background: @brand url(../img/tooltag-arrowright.png) 95% center no-repeat;
+}
+
+.object-tools a.addlink {
+    background: @brand url(../img/tooltag-add.png) 95% center no-repeat;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// dashboard
+
+#content {
+    padding: 20px 18px;
+}
+
+.dashboard #content {
+    width: auto;  // might remove this later
+}
+
+#content-related {
+    margin-right: -280px;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// header
+
+#header {
+    height: 53px;
+    line-height: 53px;
+    padding: 0 18px;
+    background: black;
+    color: #999;
+}
+
+#branding h1 {
+    font-weight: 400;
+    font-size: 1.125em;
+    color: white;
+    line-height: 53px;
+}
+
+a:visited {
+    color: white;
+}
+
+#branding h2 {
+    color: @brand;
+}
+
+#user-tools {
+    font-weight: normal;
+    font-size: 1.125em;
+    letter-spacing: normal;
+    text-transform: none;
+    a {
+        border-bottom: none;
+        &:hover {
+            border-bottom-color: black;
+            color: @brand;
+        }
+    }
+}
+
+#content-related h3 {
+    font-weight: 400;
+}
+
+#content-related h4 {
+    font-size: 1.125em;
+}
+
+#content-related .module h2 {
+    padding: 8px 16px;
+    border-bottom: 1px solid @grey;
+    font-size: 1.125em;
+    color: white;
+    background: black;
+}
+
+.delete-confirmation form .cancel-link:active,
+.delete-confirmation form .cancel-link:hover {
+    background: @brand;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// external overrides
+
+/* page tree */
+
+#tree:before {
+    content: 'Drag page titles to re-order';
+    border-bottom: 1px solid #eee;
+    display: block;
+    padding: 8px;
+    font-size: 1.125em;
+    color: #999;
+}
+
+ul.jqtree-tree {
+    margin-top: 0;
+}
+
+.jqtree-tree li {
+    padding: 0 !important;
+    font-size: 15.75px !important;
+}
+
+.jqtree-tree a {
+    font-size: 15.75px;
+}
+
+ul.jqtree-tree ul.jqtree_common {
+    margin-left: 23px !important;
+}
+
+.jqtree-element {
+    border-bottom: 1px solid #EEE;
+    line-height: 16px;
+    padding: 8px !important;
+}
+
+ul.jqtree-tree li.jqtree-folder {
+    margin-bottom: 0 !important;
+}
+
+.jqtree-tree .jqtree-title {
+    color: black !important;
+}
+
+#tree .edit {
+    display: inline-block;
+    background: #000;
+    color: white;
+    font-size: 12px;
+    padding: 4px 4px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+#tree .edit:hover {
+    background: #fb2668;
+}
+
+ul.jqtree-tree li.jqtree-selected > .jqtree-element,
+ul.jqtree-tree li.jqtree-selected > .jqtree-element:hover {
+    background: black !important;
+    color: white !important;
+}
+
+ul.jqtree-tree li.jqtree-selected > .jqtree-element .jqtree-title,
+ul.jqtree-tree li.jqtree-selected > .jqtree-element:hover .jqtree-title  {
+    color: white !important;
+    text-shadow: none !important;
+}
+
+ul.jqtree-tree li.jqtree-selected > .jqtree-element * {
+    text-shadow: none;
+}
+
+.jqtree-toggler {
+    color: #fb2668 !important;
+    font-size: 22px !important;
+}
+
+ul.jqtree-tree li.jqtree-selected > .jqtree-element .jqtree-toggler,
+ul.jqtree-tree li.jqtree-selected > .jqtree-element:hover .jqtree-toggler {
+    color: white;
+    text-shadow: none;
+}
+
+.jqtree-toggler.jqtree-closed {
+    font-size: 15.75px !important;
+}
+
+#tree ul.jqtree-tree li.jqtree-selected > .jqtree-element > .edit {
+    background: white;
+    color: black;
+}
+#tree ul.jqtree-tree li.jqtree-selected .edit:hover {
+    background: #fb2668;
+    color: white;
+}
+
+.jqtree-tree .jqtree-title {
+    color: #fb2668;
+}
+span.jqtree-dragging {
+    color: #fff;
+    background: #000;
+}
+
+ul.jqtree-tree li.jqtree-ghost span.jqtree-circle {
+    border: solid 2px #fb2668 !important;
+}
+
+ul.jqtree-tree li.jqtree-ghost span.jqtree-line {
+    background-color: #fb2668 !important;
+    height: 2px;
+    padding: 0;
+}
+ul.jqtree-tree span.jqtree-border {
+    left: -2px;
+    top: 0;
+    border: solid 2px #fb2668 !important;
+    border-radius: 6px;
+    margin: 0;
+}
+ul.jqtree-tree .jqtree-moving > .jqtree-element .jqtree-title {
+    outline: dashed 1px #fb2668 !important;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// sortable lists
+
+ul.sortable:before {
+    content: 'Drag titles to re-order';
+    border-bottom: 1px solid #eee;
+    display: block;
+    padding: 8px;
+    font-size: 1.125em;
+    color: #999;
+}
+
+ul.sortable li {
+    margin: -1px 0 0 0;
+    background: white;
+    background: rgba(255,255,255,.5);
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 8px;
+}
+
+ul.sortable a:hover { color: black; }
+
+
+
+

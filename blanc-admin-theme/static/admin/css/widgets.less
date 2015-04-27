@@ -1,0 +1,28 @@
+@import (inline) '../../../../flat/static/admin/css/forms.css';
+@import (less) 'global';
+
+////////////////////////////////////////////////////////////////////////////////
+// style magic
+
+.selector-chosen h2 {
+    background: #f8f8f8;
+    color: #666;
+}
+
+.calendar caption, .calendarbox h2 {
+    background: black;
+    color: white;
+}
+
+.calendar td.selected a {
+    background: @brand;
+}
+
+.calendar td a:hover, .timelist a:hover {
+    background: @brand;
+}
+
+.calendar td a:active, .timelist a:active {
+    background: @brand;
+    color: white;
+}
