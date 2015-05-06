@@ -1,3 +1,7 @@
-recursive-include flat *
+recursive-include blanc-admin-theme *.py
+recursive-include blanc-admin-theme *.css *.less
+recursive-include blanc-admin-theme *.ttf *.txt
+recursive-include blanc-admin-theme *.gif *.png
 include README.rst
 include LICENSE
+prune flat

@@ -3,4 +3,4 @@
 .DS_Store
 /env/
 /dist/
-/django_flat_theme.egg-info/
+*.egg-info
