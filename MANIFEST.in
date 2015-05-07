@@ -1,7 +1,7 @@
-recursive-include blanc-admin-theme *.py
-recursive-include blanc-admin-theme *.css *.less
-recursive-include blanc-admin-theme *.ttf *.txt
-recursive-include blanc-admin-theme *.gif *.png
+recursive-include blanc_admin_theme *.py
+recursive-include blanc_admin_theme *.css *.less
+recursive-include blanc_admin_theme *.ttf *.txt
+recursive-include blanc_admin_theme *.gif *.png
 include README.rst
 include LICENSE
 prune flat

@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 setup(
     name='blanc-admin-theme',
     packages=find_packages(exclude=['flat']),
-    version=__import__('blanc-admin-theme').__version__,
+    version=__import__('blanc_admin_theme').__version__,
     author='Steve Hawkes',
     author_email='steve@blanc.ltd.uk',
     description="Blanc's theme for the Django admin.",
