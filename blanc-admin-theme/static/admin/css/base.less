@@ -7,6 +7,8 @@
 body {
     -webkit-font-smoothing: antialiased;
     font: 14px/21px @font;
+    background: black;
+    color: white;
 }
 
 a:link, a:visited {
@@ -21,7 +23,8 @@ h1 {
     line-height: 1.16666667;
     line-height: 1;
     margin: 0 0 .65em 0;
-    padding: 0 0 .65em 8px;
+    padding: 0 0 .65em 0;
+    color: white;
 }
 
 h5 {
@@ -34,6 +37,7 @@ li, dt, dd {
 
 .tiny, .mini {
     font-size: 11px;
+    text-transform: uppercase;
 }
 
 .help, p.help {
@@ -44,12 +48,16 @@ li, dt, dd {
 // tables
 
 table {
-    border-color: @brand;
+    background: black;
+}
+tbody {
+    border-top: 1px solid #373737;
 }
 
 td, th {
     font-size: 1.125em;
     font-family: @font;
+    border-bottom: 1px solid #373737;
 }
 
 th { font-weight: normal; }
@@ -59,6 +67,24 @@ th { font-weight: normal; }
 thead th {
     line-height: 19px;
     font-size: 13px;
+    background-color: #373737;
+    border-bottom: none !important;
+    border-top: none !important;
+    color: white;
+    a{
+        &:link {
+            color: @brand;
+        }
+        &:hover {
+            color: white;
+            background-color: #373737x;
+        }
+    }
+
+}
+
+.row1, .row2 {
+    background-color: black;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -90,14 +116,19 @@ input, textarea, select, .form-row p, form .button {
 ////////////////////////////////////////////////////////////////////////////////
 // modules
 
+.module {
+    background-color: black;
+    border-bottom: 4px solid #373737;
+}
+
 .module h2, .module caption, .inline-group h2 {
-    font-size: 1.125em;
+    font-size: 1.25em;
     background: black;
 }
 
 .module caption,
 .inline-group h2 {
-    font-size: 1.125em;
+    font-size: 1.25em;
     letter-spacing: normal;
     text-transform: none;
 }
@@ -125,10 +156,10 @@ div.system-message {
 div.breadcrumbs {
     background: #000000;
     padding: 0 18px;
-    border-top: 1px solid #373737;
+    border-bottom: 1px solid #373737;
     font-size: 19.125/14em;
     line-height: 64px;
-    color: #525252;
+    color: #979797;
 }
 
 div.breadcrumbs a:hover {
@@ -179,6 +210,7 @@ div.breadcrumbs a:hover {
 }
 
 #content-related {
+    background-color: black;
     margin-right: -280px;
 }
 
@@ -190,7 +222,8 @@ div.breadcrumbs a:hover {
     line-height: 64px;
     padding: 0 18px;
     background: black;
-    color: #525252;
+    color: #979797;
+    border-bottom: 1px solid #373737;
 }
 
 #branding h1 {
@@ -222,6 +255,7 @@ div.breadcrumbs a:hover {
 
 #content-related h3 {
     font-weight: 400;
+    color: #979797;
 }
 
 #content-related h4 {
@@ -230,7 +264,7 @@ div.breadcrumbs a:hover {
 
 #content-related .module h2 {
     padding: 8px 16px;
-    border-bottom: 1px solid @grey;
+    border-bottom: 1px solid #373737;
     font-size: 1.125em;
     color: white;
     background: black;
@@ -390,6 +424,7 @@ ul.sortable li {
 
 ul.sortable a:hover { color: black; }
 
-
-
+table thead th.sortable:hover, thead th.sorted {
+  background: #373737;
+}
 

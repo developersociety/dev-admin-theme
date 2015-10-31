@@ -5,44 +5,86 @@
 // style overrides
 
 #changelist .toplinks {
-    border-bottom: 1px solid @mid !important;
+    border-bottom: 1px solid #373737 !important;
+}
+
+#changelist #toolbar {
+    background-color: black;
+    border-color: #373737;
+    margin-bottom: 1px;
 }
 
 #changelist #toolbar form input[type="submit"] {
     border: none;
     padding: 4px 10px 5px 10px;
     border-radius: 4px;
-    background: black;
+    background: @brand;
     color: white;
 }
 
-#changelist-filter h2 {
-    text-transform: none;
-    letter-spacing: none;
-    background: none;
-    padding: 8px 16px;
-    margin-bottom: 16px;
-    border-bottom: 1px solid @grey;
-    font-size: 1.125em;
-    color: white;
-    background: black;
+#changelist-filter {
+    background-color: black;
+
+    h2 {
+        text-transform: none;
+        letter-spacing: none;
+        background: none;
+        padding: 8px 16px;
+        margin-bottom: 16px;
+        border-bottom: 1px solid #373737;
+        font-size: 1.125em;
+        color: white;
+        background: black;
+    }
+    h3 {
+        color: white;
+    }
+    ul {
+        border-bottom-color: #373737;
+    }
 }
 
-#changelist-filter a:hover {
-    color: @light !important;
+.change-list .filtered {
+    background-color: black !important;
 }
 
-#changelist-filter li.selected a {
-    color: @brand !important;
+#changelist-filter a{
+    color: #979797 !important;
+    &:hover { color: @brand !important; }
+}
+
+#changelist-filter li.selected{
+    border-left-color: @brand;
+    a { color: @brand !important; }
+}
+
+#changelist-search {
+
+
+}
+#changelist #toolbar form {
+    label {
+        display: none;
+    }
+    #searchbar {
+        border-radius: 4px 0 0 4px;
+        height: 21px;
+        line-height: 21px;
+        margin-right: -3px;
+        border: 1px solid white;
+    }
+    input[type="submit"] {
+        border-radius: 0 4px 4px 0;
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // date drilldown
 
 .change-list ul.toplinks {
-    border-top: 1px solid @mid;
-    background: @back;
-    border-bottom: 1px solid @mid;
+    border-top: none;
+    background: black;
+    border-bottom: 1px solid #373737 !important;
     line-height: 35px;
 }
 
@@ -68,8 +110,21 @@
     }
 }
 
-#changelist .actions .button {
-    border: none;
-    background: black;
-    color: white;
+#changelist .paginator {
+    background-color: black;
+    border: none !important;
+}
+
+#changelist .actions {
+    background: none;
+    border-bottom: none !important;
+    color: #979797;
+    select {
+        background: white;
+    }
+    .button {
+        border: none;
+        background: black;
+        color: white;
+    }
 }
