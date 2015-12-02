@@ -11,21 +11,18 @@
 
 .change-list .hiddenfields { display:none; }
 
-.change-list .filtered {
-    min-height: 400px;
-}
-
-.change-list .filtered {
-    background: #fff !important;
-}
-
 .change-list .filtered table {
     border-right: none;
 }
 
-.change-list .filtered .results, .change-list .filtered .paginator, .filtered #toolbar, .filtered div.xfull {
-    margin-right: 280px !important;
-    width: auto !important;
+.change-list .filtered {
+    min-height: 400px;
+}
+
+.change-list .filtered .results, .change-list .filtered .paginator,
+.filtered #toolbar, .filtered div.xfull {
+    margin-right: 280px;
+    width: auto;
 }
 
 .change-list .filtered table tbody th {
@@ -37,19 +34,14 @@
 }
 
 #changelist .toplinks {
-    border-bottom: 1px solid #ccc !important;
+    border-bottom: 1px solid #ddd;
 }
 
 #changelist .paginator {
     color: #666;
-    border-top: none;
     border-bottom: 1px solid #eee;
     background: #fff;
     overflow: hidden;
-}
-
-.change-list .filtered .paginator {
-    border-right: none;
 }
 
 /* CHANGELIST TABLES */
@@ -65,17 +57,8 @@
     text-align: center;
 }
 
-#changelist table tbody td, #changelist table tbody th {
-    border-left: none;
-}
-
-#changelist table tbody td:first-child, #changelist table tbody th:first-child {
-    border-left: 0;
-    border-right: none;
-}
-
 #changelist table tbody td.action-checkbox {
-    text-align:center;
+    text-align: center;
 }
 
 #changelist table tfoot {
@@ -118,8 +101,9 @@
     border: 1px solid #ccc;
     padding: 2px 10px;
     margin: 0;
-    vertical-align: -1px;
-    background: #fff url(../img/nav-bg.gif) bottom repeat-x;
+    vertical-align: middle;
+    background: #fff;
+    box-shadow: 0 -15px 20px -10px rgba(0, 0, 0, 0.15) inset;
     cursor: pointer;
     color: #333;
 }
@@ -185,7 +169,7 @@
 }
 
 #changelist-filter a:hover {
-    color: #036 !important;
+    color: #036;
 }
 
 #changelist-filter li.selected {
@@ -195,19 +179,16 @@
 }
 
 #changelist-filter li.selected a {
-    color: #5b80b2 !important;
+    color: #5b80b2;
 }
-
 
 /* DATE DRILLDOWN */
 
 .change-list ul.toplinks {
     display: block;
-    background: white url(../img/nav-bg-reverse.gif) 0 -10px repeat-x;
-    border-top: 1px solid white;
     float: left;
-    padding: 0 !important;
-    margin: 0 !important;
+    padding: 0;
+    margin: 0;
     width: 100%;
 }
 
@@ -245,19 +226,18 @@
 }
 
 .paginator a.showall {
-    padding: 0 !important;
-    border: none !important;
-    background: none !important;
-    color: #5b80b2 !important;
+    padding: 0;
+    border: none;
+    background: none;
+    color: #5b80b2;
 }
 
 .paginator a.showall:hover {
-    color: #036 !important;
-    background: none !important;
+    color: #036;
+    background: none;
 }
 
 .paginator .end {
-    border-width: 2px !important;
     margin-right: 6px;
 }
 
@@ -276,7 +256,7 @@
 /* ACTIONS */
 
 .filtered .actions {
-    margin-right: 280px !important;
+    margin-right: 280px;
     border-right: none;
 }
 
@@ -339,7 +319,8 @@
     font-size: 13px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background: #fff url(../img/nav-bg.gif) bottom repeat-x;
+    background: #fff;
+    box-shadow: 0 -15px 20px -10px rgba(0, 0, 0, 0.15) inset;
     cursor: pointer;
     height: 24px;
     line-height: 1;

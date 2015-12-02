@@ -8,7 +8,7 @@ body {
     margin: 0;
     padding: 0;
     font-size: 14px;
-    font-family: "Roboto", Corbel, Avenir, "Lucida Grande", "Lucida Sans", sans-serif;
+    font-family: "Roboto","Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
     color: #333;
     background: #fff;
 }
@@ -89,14 +89,6 @@ h5 {
 ul li {
     list-style-type: square;
     padding: 1px 0;
-}
-
-ul.plainlist {
-    margin-left: 0 !important;
-}
-
-ul.plainlist li {
-    list-style-type: none;
 }
 
 li ul {
@@ -187,12 +179,12 @@ p.mini {
     margin-top: -3px;
 }
 
-.help, p.help {
-    font-size: 10px !important;
+.help, p.help, form p.help {
+    font-size: 11px;
     color: #999;
 }
 
-img.help-tooltip {
+.help-tooltip {
     cursor: help;
 }
 
@@ -201,12 +193,8 @@ p img, h1 img, h2 img, h3 img, h4 img, td img {
 }
 
 .quiet, a.quiet:link, a.quiet:visited {
-    color: #999 !important;
-    font-weight: normal !important;
-}
-
-.quiet strong {
-    font-weight: bold !important;
+    color: #999;
+    font-weight: normal;
 }
 
 .float-right {
@@ -239,6 +227,12 @@ p img, h1 img, h2 img, h3 img, h4 img, td img {
     white-space: nowrap;
 }
 
+img[src*="icon-no"], img[src*="icon-yes"], img[src*="icon-unknown"] {
+  width: 12px;
+  height: 12px;
+  vertical-align: -1px;
+}
+
 /* TABLES */
 
 table {
@@ -247,12 +241,12 @@ table {
 }
 
 td, th {
-    font-family: "Roboto", Corbel, Avenir, "Lucida Grande", "Lucida Sans", sans-serif;
     font-size: 13px;
     line-height: 16px;
     border-bottom: 1px solid #eee;
     vertical-align: top;
     padding: 8px;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
 }
 
 th {
@@ -276,24 +270,6 @@ tfoot td {
     border-top: 1px solid #eee;
 }
 
-thead th:first-child,
-tfoot td:first-child {
-    border-left: none !important;
-}
-
-thead th.optional {
-    font-weight: normal !important;
-}
-
-tr.row-label td {
-    font-size: 9px;
-    padding-top: 2px;
-    padding-bottom: 0;
-    border-bottom: none;
-    color: #666;
-    margin-top: -1px;
-}
-
 tr.alt {
     background: #f6f6f6;
 }
@@ -303,15 +279,15 @@ tr.alt {
 }
 
 .row2 {
-    background: #fff;
+    background: #f9f9f9;
 }
 
 /* SORTABLE TABLES */
 
 thead th {
-    text-transform: uppercase;
     padding: 5px 10px;
     line-height: normal;
+    text-transform: uppercase;
     background: #f6f6f6;
 }
 
@@ -328,8 +304,8 @@ thead th.sorted .text {
 }
 
 table thead th .text span {
-    display: block;
     padding: 8px 10px;
+    display: block;
 }
 
 table thead th .text a {
@@ -352,7 +328,7 @@ table thead th.sorted:hover a.sortremove {
 
 table thead th.sorted .sortoptions {
     display: block;
-    padding: 10px 5px 0 5px;
+    padding: 9px 5px 0 5px;
     float: right;
     text-align: right;
 }
@@ -361,53 +337,57 @@ table thead th.sorted .sortpriority {
     font-size: .8em;
     min-width: 12px;
     text-align: center;
-    vertical-align: top;
+    vertical-align: 3px;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
 table thead th.sorted .sortoptions a {
+    position: relative;
     width: 14px;
-    height: 12px;
+    height: 14px;
     display: inline-block;
+    background: url(../img/svg/sorting-icons.svg) 0 0 no-repeat;
+    background-size: 14px auto;
 }
 
 table thead th.sorted .sortoptions a.sortremove {
-    background: url(../img/sorting-icons.gif) -4px -5px no-repeat;
+    background-position: 0 0;
+}
+
+table thead th.sorted .sortoptions a.sortremove:after {
+    content: '\\';
+    position: absolute;
+    top: -6px;
+    left: 3px;
+    font-weight: 200;
+    font-size: 18px;
+    color: #999;
+}
+
+table thead th.sorted .sortoptions a.sortremove:hover:after {
+    color: #447e9b;
 }
 
 table thead th.sorted .sortoptions a.sortremove:hover {
-    background: url(../img/sorting-icons.gif) -4px -27px no-repeat;
+    background-position: 0 -14px;
 }
 
 table thead th.sorted .sortoptions a.ascending {
-    background: url(../img/sorting-icons.gif) -5px -50px no-repeat;
+    background-position: 0 -28px;
 }
 
 table thead th.sorted .sortoptions a.ascending:hover {
-    background: url(../img/sorting-icons.gif) -5px -72px no-repeat;
+    background-position: 0 -42px;
 }
 
 table thead th.sorted .sortoptions a.descending {
-    background: url(../img/sorting-icons.gif) -5px -94px no-repeat;
+    top: 1px;
+    background-position: 0 -56px;
 }
 
 table thead th.sorted .sortoptions a.descending:hover {
-    background: url(../img/sorting-icons.gif) -5px -115px no-repeat;
-}
-
-/* ORDERABLE TABLES */
-
-table.orderable tbody tr td:hover {
-    cursor: move;
-}
-
-table.orderable tbody tr td:first-child {
-    padding-left: 14px;
-    background-image: url(../img/nav-bg-grabber.gif);
-    background-repeat: repeat-y;
-}
-
-table.orderable-initalized .order-cell, body>tr>td.order-cell {
-    display: none;
+    background-position: 0 -70px;
 }
 
 /* FORM DEFAULTS */
@@ -416,17 +396,17 @@ input, textarea, select, .form-row p, form .button {
     margin: 2px 0;
     padding: 2px 3px;
     vertical-align: middle;
-    font-family: "Roboto", Corbel, Avenir, "Lucida Grande", "Lucida Sans", sans-serif;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
     font-weight: normal;
     font-size: 13px;
 }
 
 textarea {
-    vertical-align: top !important;
+    vertical-align: top;
 }
 
-input[type=text], input[type=password], input[type=email], input[type=url], input[type=number],
-textarea, select, .vTextField {
+input[type=text], input[type=password], input[type=email], input[type=url],
+input[type=number], textarea, select, .vTextField {
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 5px 6px;
@@ -434,8 +414,9 @@ textarea, select, .vTextField {
     outline: none;
 }
 
-input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=url]:focus, input[type=number]:focus,
-textarea:focus, select:focus, .vTextField:focus {
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus,
+input[type=url]:focus, input[type=number]:focus, textarea:focus, select:focus,
+.vTextField:focus {
     border-color: #999;
 }
 
@@ -484,7 +465,9 @@ a.button {
     background: #205067;
 }
 
-.button[disabled].default, input[type=submit][disabled].default, input[type=button][disabled].default {
+.button[disabled].default,
+input[type=submit][disabled].default,
+input[type=button][disabled].default {
     opacity: 0.4;
 }
 
@@ -548,20 +531,23 @@ ul.messagelist li {
     font-size: 13px;
     padding: 10px 10px 10px 65px;
     margin: 0 0 10px 0;
-    background: #dfd url(../img/icon_success.gif) 40px 12px no-repeat;
+    background: #dfd url(../img/svg/icon-yes.svg) 40px 12px no-repeat;
+    background-size: 16px auto;
     color: #333;
 }
 
 ul.messagelist li.warning {
-    background: #ffc url(../img/icon_alert.gif) 40px 10px no-repeat;
+    background: #ffc url(../img/svg/icon-alert.svg) 40px 14px no-repeat;
+    background-size: 14px auto;
 }
 
 ul.messagelist li.error {
-    background: #ffefef url(../img/icon_error.gif) 40px 11px no-repeat;
+    background: #ffefef url(../img/svg/icon-no.svg) 40px 12px no-repeat;
+    background-size: 16px auto;
 }
 
 .errornote {
-    font-size: 14px !important;
+    font-size: 14px;
     font-weight: 700;
     display: block;
     padding: 10px 12px;
@@ -574,14 +560,14 @@ ul.messagelist li.error {
 }
 
 ul.errorlist {
-    margin: 0 0 4px !important;
-    padding: 0 !important;
+    margin: 0 0 4px;
+    padding: 0;
     color: #ba2121;
     background: #fff;
 }
 
 ul.errorlist li {
-    font-size: 13px !important;
+    font-size: 13px;
     display: block;
     margin-bottom: 4px;
 }
@@ -591,17 +577,28 @@ ul.errorlist li:first-child {
 }
 
 ul.errorlist li a {
-    color: #fff;
+    color: inherit;
     text-decoration: underline;
 }
 
 td ul.errorlist {
-    margin: 0 !important;
-    padding: 0 !important;
+    margin: 0;
+    padding: 0;
 }
 
 td ul.errorlist li {
-    margin: 0 !important;
+    margin: 0;
+}
+
+.form-row.errors {
+    margin: 0;
+    border: none;
+    border-bottom: 1px solid #eee;
+    background: none;
+}
+
+.form-row.errors ul.errorlist li {
+    padding-left: 0;
 }
 
 .errors input, .errors select, .errors textarea {
@@ -619,7 +616,7 @@ div.system-message p.system-message-title {
     padding: 4px 5px 4px 25px;
     margin: 0;
     color: #c11;
-    background: #ffefef url(../img/icon_error.gif) 5px .3em no-repeat;
+    background: #ffefef url(../img/svg/icon-no.svg) 5px 5px no-repeat;
 }
 
 .description {
@@ -649,18 +646,18 @@ div.breadcrumbs a:hover {
 /* ACTION ICONS */
 
 .addlink {
-    padding-left: 14px;
-    background: url(../img/icon_addlink.gif) 0 .2em no-repeat;
+    padding-left: 16px;
+    background: url(../img/svg/icon-addlink.svg) 0 1px no-repeat;
 }
 
 .changelink, .inlinechangelink {
-    padding-left: 14px;
-    background: url(../img/icon_changelink.gif) 0 .2em no-repeat;
+    padding-left: 16px;
+    background: url(../img/svg/icon-changelink.svg) 0 1px no-repeat;
 }
 
 .deletelink {
-    padding-left: 14px;
-    background: url(../img/icon_deletelink.gif) 0 .25em no-repeat;
+    padding-left: 16px;
+    background: url(../img/svg/icon-deletelink.svg) 0 1px no-repeat;
 }
 
 a.deletelink:link, a.deletelink:visited {
@@ -718,12 +715,12 @@ a.deletelink:hover {
 }
 
 .object-tools a.viewsitelink, .object-tools a.golink {
-    background: #999 url(../img/tooltag-arrowright.png) 95% center no-repeat;
+    background: #999 url(../img/svg/tooltag-arrowright.svg) right 8px center no-repeat;
     padding-right: 26px;
 }
 
 .object-tools a.addlink {
-    background: #999 url(../img/tooltag-add.png) 95% center no-repeat;
+    background: #999 url(../img/svg/tooltag-add.svg) right 8px center no-repeat;
     padding-right: 26px;
 }
 
@@ -748,7 +745,6 @@ table#change-history tbody th {
 
 #content {
     padding: 20px 40px;
-    margin: 0;
 }
 
 .dashboard #content {
@@ -775,17 +771,17 @@ table#change-history tbody th {
 /* COLUMN TYPES */
 
 .colMS {
-    margin-right: 20em !important;
+    margin-right: 300px;
 }
 
 .colSM {
-    margin-left: 20em !important;
+    margin-left: 300px;
 }
 
 .colSM #content-related {
     float: left;
     margin-right: 0;
-    margin-left: -19em;
+    margin-left: -300px;
 }
 
 .colSM #content-main {
@@ -795,13 +791,6 @@ table#change-history tbody th {
 .popup .colM {
     width: auto;
 }
-
-.subcol {
-    float: left;
-    width: 46%;
-    margin-right: 15px;
-}
-
 
 /* HEADER */
 
