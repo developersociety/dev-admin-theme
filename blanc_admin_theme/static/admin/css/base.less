@@ -6,7 +6,7 @@
 
 body {
     -webkit-font-smoothing: antialiased;
-    font: 14px/21px @font;
+    font: 14px/1.25 @font;
 }
 
 a:link, a:visited {
@@ -29,7 +29,7 @@ h5 {
 }
 
 li, dt, dd {
-    font-size: 1.125em;
+    font-size: 1.125rem;
 }
 
 .tiny, .mini {
@@ -126,9 +126,9 @@ div.breadcrumbs {
     background: #000000;
     padding: 0 18px;
     border-top: 1px solid #373737;
-    font-size: 19.125/14em;
-    line-height: 64px;
-    color: #525252;
+    font-size: 1.125em;
+    line-height: 53px;
+    color: #999;
 }
 
 div.breadcrumbs a:hover {
@@ -174,30 +174,69 @@ div.breadcrumbs a:hover {
     padding: 20px 18px;
 }
 
-.dashboard #content {
-    width: auto;  // might remove this later
+.dashboard {
+    #content {
+        width: 840px;  // might remove this later
+        h1 {
+            padding-left: 0;
+            font-size: 40px;
+            font-weight: 100;
+            color: black;
+        }
+    }
+    .module {
+        border-top: 5px solid @mid;
+        &.app-auth {
+            caption { width:233px; overflow: hidden; height: 30px;  }
+        }
+        table {
+            position: relative;
+            width: auto;
+            left: 0;
+            right: 0;
+            tbody {
+                border-left: 525px solid white;
+            }
+        }
+        caption {
+            position: absolute;
+            width: 255px;
+            background: none;
+            padding-left: 0;
+            a { color: black; font-size: 30px; font-weight: 300; line-height: 1.2; }
+        }
+    }
 }
 
 #content-related {
     margin-right: -280px;
+    .module {
+        h2 {
+            background: none !important;
+            font-size: 30px !important;
+            line-height: 1.125;
+            font-weight: 300;
+            color: black !important;
+        }
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // header
 
 #header {
-    height: 64px;
-    line-height: 64px;
+    height: 80px;
+    line-height: 80px;
     padding: 0 18px;
     background: black;
-    color: #525252;
+    color: #999;
 }
 
 #branding h1 {
-    font-weight: 400;
-    font-size: 19.125/14em;
+    font-weight: 600;
+    font-size: 40px;
     color: white;
-    line-height: 64px;
+    line-height: 80px;
     a:visited { color: white; }
 }
 
@@ -207,9 +246,11 @@ div.breadcrumbs a:hover {
 
 #user-tools {
     font-weight: normal;
-    font-size: 19.125/14em;
+    font-size: 18/14em;
     letter-spacing: normal;
     text-transform: none;
+    padding: 0 1em;
+    line-height: 80px;
     a {
         border-bottom: none;
         &:hover {
@@ -217,7 +258,6 @@ div.breadcrumbs a:hover {
             color: @brand;
         }
     }
-    strong { font-weight: normal; }
 }
 
 #content-related h3 {
