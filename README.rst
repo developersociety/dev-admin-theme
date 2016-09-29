@@ -40,12 +40,6 @@ Works correct in Django 1.6+. Older Django versions use a slightly
 different way to show icons, so it requires changing markup or adding
 python logic to make this theme compatible.
 
-Font
-~~~~
-
-This theme uses `Roboto <http://www.google.com/fonts/specimen/Roboto>`__
-font which is under Apache 2.0 licence.
-
 Testing
 ~~~~~~~
 
