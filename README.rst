@@ -26,7 +26,7 @@ Install via pip:
 
        INSTALLED_APPS = (
            ...
-           'flat',
+           'blanc_admin_theme',
            'django.contrib.admin',
            ...
        )
