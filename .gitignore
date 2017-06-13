@@ -4,3 +4,7 @@
 /env/
 /dist/
 *.egg-info
+
+# Gulp
+/node_modules
+npm-debug.log
