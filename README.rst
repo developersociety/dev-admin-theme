@@ -1,10 +1,10 @@
-blanc-admin-theme
-=================
+dev-admin-theme
+===============
 
 Description
 -----------
 
-**blanc-admin-theme** brings fresh air to the default Django Admin
+**dev-admin-theme** brings fresh air to the default Django Admin
 interface which hasn't changed 10 years from the very first version of
 Django framework. This theme just makes UI modern and clean.
 
@@ -17,16 +17,16 @@ Installation
 ------------
 
 Install via pip:
-``pip install blanc-admin-theme``
+``pip install dev-admin-theme``
 
-1. Put ``blanc_admin_theme`` app in your *INSTALLED\_APPS* **before**
+1. Put ``dev_admin_theme`` app in your *INSTALLED\_APPS* **before**
    ``django.contrib.admin``:
 
    ::
 
        INSTALLED_APPS = (
            ...
-           'blanc_admin_theme',
+           'dev_admin_theme',
            'django.contrib.admin',
            ...
        )

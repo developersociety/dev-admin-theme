@@ -26,12 +26,12 @@ gulp.task("less", function() {
         processors.push(cssnano());
     }
 
-    return gulp.src(["./blanc_admin_theme/static/admin/css/*.less"])
+    return gulp.src(["./dev_admin_theme/static/admin/css/*.less"])
         .pipe(sourcemaps.init())
         .pipe(less())
         .pipe(postcss(processors))
         .pipe(sourcemaps.write("."))
-        .pipe(gulp.dest("./blanc_admin_theme/static/admin/css"));
+        .pipe(gulp.dest("./dev_admin_theme/static/admin/css"));
 });
 
 gulp.task("default", ["less"]);
