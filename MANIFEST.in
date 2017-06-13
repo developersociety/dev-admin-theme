@@ -1,7 +1,6 @@
-recursive-include dev_admin_theme *.py
-recursive-include dev_admin_theme *.css *.less
-recursive-include dev_admin_theme *.ttf *.txt
-recursive-include dev_admin_theme *.gif *.png
 include README.rst
 include LICENSE
-prune flat
+graft dev_admin_theme
+global-exclude *.py[co]
+global-exclude __pycache__
+global-exclude .DS_Store

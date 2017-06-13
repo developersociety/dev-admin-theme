@@ -8,3 +8,7 @@
 # Gulp
 /node_modules
 npm-debug.log
+
+# CSS
+dev_admin_theme/static/admin/css/*.css
+dev_admin_theme/static/admin/css/*.map
