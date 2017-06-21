@@ -39,5 +39,5 @@ gulp.task("default", ["less"]);
 gulp.task("serve", ["default"], function() {
     "use strict";
 
-    gulp.watch("./static/less/**/*", ["less"]);
+    gulp.watch("./dev_admin_theme/static/admin/css/*.less", ["less"]);
 });
