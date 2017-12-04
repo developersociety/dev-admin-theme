@@ -1,430 +1,108 @@
 @import (css) '../../../../djangoadmin/static/admin/css/base.css';
 @import (less) 'global';
 
-
-////////////////////////////////////////////////////////////////////////////////
-// custom fonts
-
-/* source-sans-pro-300 - latin */
-@font-face {
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'),
-        url('../fonts/source-sans-pro-v10-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('../fonts/source-sans-pro-v10-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* source-sans-pro-regular - latin */
-@font-face {
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'),
-        url('../fonts/source-sans-pro-v10-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('../fonts/source-sans-pro-v10-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* source-sans-pro-700 - latin */
-@font-face {
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'),
-        url('../fonts/source-sans-pro-v10-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('../fonts/source-sans-pro-v10-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-
 ////////////////////////////////////////////////////////////////////////////////
 // updated styles
 
 body {
-    -webkit-font-smoothing: antialiased;
-    font: 14px/21px @font;
+    background: @back;
+    height: 100%;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-a:link, a:visited {
+#header {
+    background: @brand;
+    color: darken(@brand, 30%);
+}
+
+a:link,
+a:visited {
     color: @brand;
 }
+
 a:hover {
-    color: @hover;
+    color: darken(@brand, 5%);
+}
+
+#user-tools a:focus,
+#user-tools a:hover {
+    color: #fff;
+    border-bottom-color: darken(@brand, 30%);
+}
+
+#branding h1,
+#branding h1 a:link,
+#branding h1 a:visited {
+    color: white;
+    font-weight: bold;
+}
+
+div.breadcrumbs {
+    color: darken(@brand, 30%);
+    background-color: lighten(@brand, 4%);
 }
 
 h1 {
-    font-size: 1.875em;
-    line-height: 1.16666667;
-    line-height: 1;
-    margin: 0 0 .65em 0;
-    padding: 0 0 .65em 8px;
+    color: #616161;
 }
 
-h5 {
-    text-transform: none;
+.button.default,
+.submit-row input.default,
+input[type=submit].default {
+    background-color: @alt;
 }
 
-li, dt, dd {
-    font-size: 0.875rem;
+.button.default:active,
+.button.default:focus,
+.button.default:hover,
+input[type=submit].default:active,
+input[type=submit].default:focus,
+input[type=submit].default:hover {
+    background-color: darken(@alt, 2%);
 }
 
-.tiny, .mini {
-    font-size: 11px;
+.button,
+.submit-row input,
+a.button,
+input[type=button],
+input[type=submit] {
+    background-color: lighten(@brand, 5%);
 }
 
-.help, p.help {
-    font-size: 11px !important;
+.button:active,
+.button:focus,
+.button:hover,
+input[type=button]:active,
+input[type=button]:focus,
+input[type=button]:hover,
+input[type=submit]:active,
+input[type=submit]:focus,
+input[type=submit]:hover {
+    background-color: @brand;
 }
 
-////////////////////////////////////////////////////////////////////////////////
-// tables
-
-table {
-    border-color: @brand;
-}
-
-td, th {
-    font-size: 1.125em;
-    font-family: @font;
-}
-
-th { font-weight: normal; }
-
-/* sortable tables */
-
-thead th {
-    line-height: 19px;
-    font-size: 13px;
-}
-
-////////////////////////////////////////////////////////////////////////////////
-// forms
-
-input, textarea, select, .form-row p, form .button {
-    font-family: @font;
-    font-size: 1.125em;
-}
-
-.button, input[type=submit], input[type=button], .submit-row input, a.button {
-    background: black;
-}
-
-.button:active, input[type=submit]:active, input[type=button]:active,
-.button:hover, input[type=submit]:hover, input[type=button]:hover {
-    background: @dark;
-}
-
-.button.default, input[type=submit].default, .submit-row input.default {
-    background: black;
-}
-
-.button.default:active, input[type=submit].default:active,
-.button.default:hover, input[type=submit].default:hover {
-    background: @brand;
-}
-
-////////////////////////////////////////////////////////////////////////////////
-// modules
-
-.module h2, .module caption, .inline-group h2 {
-    font-size: 1.125em;
-    background: black;
-}
-
+.inline-group h2,
 .module caption,
-.inline-group h2 {
-    font-size: 1.125em;
-    letter-spacing: normal;
-    text-transform: none;
+.module h2 {
+    background-color: @brand;
 }
 
-.module table {
-    width: 100%;  // might remove this later
-}
-
-/* messages and errors */
-
-ul.messagelist li {
-    font-size: 1.125em;
-}
-
-ul.messagelist li.warning {
-    background: @brand url(../img/icon_alert.gif) 40px 10px no-repeat;
-}
-
-div.system-message {
-    background: @brand;
-}
-
-/* BREADCRUMBS */
-
-div.breadcrumbs {
-    background: #000000;
-    padding: 0 18px;
-    border-top: 1px solid #373737;
-    font-size: 19.125/14em;
-    line-height: 64px;
-    color: #525252;
-}
-
-div.breadcrumbs a:hover {
-    color: #fb2668;
-}
-
-/* OBJECT TOOLS */
-
-.object-tools {
-    font-size: 14px;
-    margin-top: -58px;
-
-    li {
-        font-size: 14px !important;
-    }
-    a {
-        border-radius: 4px;
-        &:link, &:visited {
-            background: @brand;
-            font-size: 1.125em;
-            text-transform: normal;
-            text-transform: none;
-        }
-    }
-}
-
-.object-tools a:hover, .object-tools li:hover a {
-    background-color: black;
-}
-
-.object-tools a.viewsitelink, .object-tools a.golink {
-    background: @brand url(../img/tooltag-arrowright.png) 95% center no-repeat;
-}
-
-.object-tools a.addlink {
-    background: @brand url(../img/tooltag-add.png) 95% center no-repeat;
-}
-
-////////////////////////////////////////////////////////////////////////////////
-// dashboard
-
-#content {
-    padding: 20px 18px;
-}
-
-.dashboard #content {
-    width: auto;  // might remove this later
-}
-
-#content-related {
-    margin-right: -280px;
-}
-
-////////////////////////////////////////////////////////////////////////////////
-// header
-
-#header {
-    height: 64px;
-    line-height: 64px;
-    padding: 0 18px;
-    background: black;
-    color: #525252;
-}
-
-#branding h1 {
-    font-weight: 400;
-    font-size: 19.125/14em;
-    color: white;
-    line-height: 64px;
-    a:visited { color: white; }
-}
-
-#branding h2 {
-    color: @brand;
+.object-tools a:focus,
+.object-tools a:hover {
+    background-color: lighten(@brand, 5%);
 }
 
 #user-tools {
-    font-weight: normal;
-    font-size: 19.125/14em;
-    letter-spacing: normal;
-    text-transform: none;
-    a {
-        border-bottom: none;
-        &:hover {
-            border-bottom-color: black;
-            color: @brand;
-        }
-    }
-    strong { font-weight: normal; }
-}
-
-#content-related h3 {
-    font-weight: 400;
-}
-
-#content-related h4 {
-    font-size: 1.125em;
-}
-
-#content-related .module h2 {
-    padding: 8px 16px;
-    border-bottom: 1px solid @grey;
-    font-size: 1.125em;
-    color: white;
-    background: black;
-}
-
-.delete-confirmation form .cancel-link:active,
-.delete-confirmation form .cancel-link:hover {
-    background: @brand;
-}
-
-////////////////////////////////////////////////////////////////////////////////
-// external overrides
-
-/* page tree */
-
-#tree:before {
-    content: 'Drag page titles to re-order';
-    border-bottom: 1px solid #eee;
-    display: block;
-    padding: 8px;
-    font-size: 1.125em;
-    color: #999;
-}
-
-ul.jqtree-tree {
-    margin-top: 0;
-}
-
-.jqtree-tree li {
-    padding: 0 !important;
-    font-size: 15.75px !important;
-}
-
-.jqtree-tree a {
-    font-size: 15.75px;
-}
-
-ul.jqtree-tree ul.jqtree_common {
-    margin-left: 23px !important;
-}
-
-.jqtree-element {
-    border-bottom: 1px solid #EEE;
-    line-height: 16px;
-    padding: 8px !important;
-}
-
-ul.jqtree-tree li.jqtree-folder {
-    margin-bottom: 0 !important;
-}
-
-.jqtree-tree .jqtree-title {
-    color: black !important;
-}
-
-#tree .edit {
-    display: inline-block;
-    background: #000;
-    color: white;
-    font-size: 12px;
-    padding: 4px 4px;
-    border-radius: 4px;
+    font-weight: bold;
+    font-size: 13px;
     text-transform: uppercase;
-}
-#tree .edit:hover {
-    background: #fb2668;
+    text-align: right;
 }
 
-ul.jqtree-tree li.jqtree-selected > .jqtree-element,
-ul.jqtree-tree li.jqtree-selected > .jqtree-element:hover {
-    background: black !important;
-    color: white !important;
-}
-
-ul.jqtree-tree li.jqtree-selected > .jqtree-element .jqtree-title,
-ul.jqtree-tree li.jqtree-selected > .jqtree-element:hover .jqtree-title  {
-    color: white !important;
-    text-shadow: none !important;
-}
-
-ul.jqtree-tree li.jqtree-selected > .jqtree-element * {
-    text-shadow: none;
-}
-
-.jqtree-toggler {
-    color: #fb2668 !important;
-    font-size: 22px !important;
-}
-
-ul.jqtree-tree li.jqtree-selected > .jqtree-element .jqtree-toggler,
-ul.jqtree-tree li.jqtree-selected > .jqtree-element:hover .jqtree-toggler {
-    color: white;
-    text-shadow: none;
-}
-
-.jqtree-toggler.jqtree-closed {
-    font-size: 15.75px !important;
-}
-
-#tree ul.jqtree-tree li.jqtree-selected > .jqtree-element > .edit {
-    background: white;
-    color: black;
-}
-#tree ul.jqtree-tree li.jqtree-selected .edit:hover {
-    background: #fb2668;
-    color: white;
-}
-
-.jqtree-tree .jqtree-title {
-    color: #fb2668;
-}
-span.jqtree-dragging {
+ul.messagelist li {
+    background-color: #404040;
     color: #fff;
-    background: #000;
+    a:hover {
+        color: lighten(@brand, 5%)
+    }
 }
-
-ul.jqtree-tree li.jqtree-ghost span.jqtree-circle {
-    border: solid 2px #fb2668 !important;
-}
-
-ul.jqtree-tree li.jqtree-ghost span.jqtree-line {
-    background-color: #fb2668 !important;
-    height: 2px;
-    padding: 0;
-}
-ul.jqtree-tree span.jqtree-border {
-    left: -2px;
-    top: 0;
-    border: solid 2px #fb2668 !important;
-    border-radius: 6px;
-    margin: 0;
-}
-ul.jqtree-tree .jqtree-moving > .jqtree-element .jqtree-title {
-    outline: dashed 1px #fb2668 !important;
-}
-
-////////////////////////////////////////////////////////////////////////////////
-// sortable lists
-
-ul.sortable:before {
-    content: 'Drag titles to re-order';
-    border-bottom: 1px solid #eee;
-    display: block;
-    padding: 8px;
-    font-size: 1.125em;
-    color: #999;
-}
-
-ul.sortable li {
-    margin: -1px 0 0 0;
-    background: white;
-    background: rgba(255,255,255,.5);
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    padding: 8px;
-}
-
-ul.sortable a:hover { color: black; }
-
-
-
-

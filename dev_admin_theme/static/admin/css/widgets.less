@@ -5,24 +5,23 @@
 // style magic
 
 .selector-chosen h2 {
-    background: #f8f8f8;
-    color: #666;
+    background: lighten(@brand, 5%);
+    background: red;
 }
 
-.calendar caption, .calendarbox h2 {
-    background: black;
+.calendar caption,
+.calendarbox h2 {
+    background: @brand;
     color: white;
 }
 
 .calendar td.selected a {
-    background: @brand;
+    background: @brand
 }
 
-.calendar td a:hover, .timelist a:hover {
-    background: @brand;
-}
-
-.calendar td a:active, .timelist a:active {
-    background: @brand;
-    color: white;
+.calendar td a:focus,
+.calendar td a:hover,
+.timelist a:focus,
+.timelist a:hover {
+    background: lighten(@brand, 10%);
 }
