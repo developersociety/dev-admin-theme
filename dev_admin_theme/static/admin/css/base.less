@@ -24,10 +24,16 @@ a:hover {
     color: darken(@brand, 5%);
 }
 
+#user-tools a:link {
+    color: white;
+    color: rgba(255,255,255,0.8);
+    border-bottom: none;
+}
+
 #user-tools a:focus,
 #user-tools a:hover {
     color: #fff;
-    border-bottom-color: darken(@brand, 30%);
+    border-bottom-color: none;
 }
 
 #branding h1,
@@ -40,6 +46,16 @@ a:hover {
 div.breadcrumbs {
     color: darken(@brand, 30%);
     background-color: lighten(@brand, 4%);
+}
+
+div.breadcrumbs a:link {
+    color: white;
+    color: rgba(255,255,255,0.8);
+}
+
+div.breadcrumbs a:focus,
+div.breadcrumbs a:hover {
+    color: white;
 }
 
 h1 {
