@@ -26,7 +26,10 @@ gulp.task("less", function() {
         processors.push(cssnano());
     }
 
-    return gulp.src(["./dev_admin_theme/static/admin/css/*.less"])
+    return gulp.src([
+            "./dev_admin_theme/static/admin/css/fonts.less",
+            "./dev_admin_theme/static/admin/css/widgets.less",
+            "./dev_admin_theme/static/admin/css/*.less"])
         .pipe(sourcemaps.init())
         .pipe(less())
         .pipe(postcss(processors))
