@@ -1,44 +1,15 @@
-@import (css) '../../../../djangoadmin/static/admin/css/forms.css';
+@import (inline) 'djangoadmin/static/admin/css/forms.css';
 @import (less) 'global';
 
 ////////////////////////////////////////////////////////////////////////////////
 // forms
 
-.form-row {
-    padding: 10px 8px;
-    caption {
-        border-top: 1px solid @mid;
-        border-bottom: 1px solid @mid;
-        background: @mid;
-        color: @head;
-    }
+.submit-row {
+    background: white;
+    background: rgba(255,255,255,.5);
 }
 
-label {
-    color: @head;
-    font-size: 1.125em;
-}
 
-input, select {
-    color: @head;
-    font-family: @font;
-}
-
-select {
-    max-width: 640px;
-}
-
-.submit-row input.default {
-    background: @brand;
-    margin: 0 0 0 8px;
-    text-transform: none;
-    font-weight: 700;
-}
-
-.submit-row a.deletelink {
-    font-size: 15.75px;
-}
-
-.inline-related h3 {
-    padding: 5px 8px;
+form ul.radiolist input[type="radio"] {
+    margin: -2px 4px 0 1px;
 }
